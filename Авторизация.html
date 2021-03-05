@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>@import url(Mystyle.css);</style>
+
+</head>
+<body>
+
+<h1>Авторизация</h1>
+
+
+
+<div class="container">
+  <form>
+
+    <p>Email: <input type="email" name="email" required></p>
+
+    <label for="psw">Пароль</label>
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Должно содержать не менее одной цифры и одной прописной и строчной буквы и спецсимвол, а также не менее 6 и более символов" required>
+    
+   <input type="submit" value="Отправить" >
+  </form>
+</div>
+
+<div id="message">
+  <h3>Пароль должен содержать следующее:</h3>
+  <p id="letter" class="invalid"><b>Верхнем регистре</b> буквы</p>
+  <p id="capital" class="invalid"><b>Заглавные (прописные)</b> буквы</p>
+  <p id="number" class="invalid"><b>Числа</b></p>
+  <p id="length" class="invalid">Минимум <b>6 символов</b></p>
+  <p id="char" class="invalid"><b>Спецсимвол</b></p>
+</div>
+			
+<script src="Myscript.js"></script>
+
+</body>
+</html>
