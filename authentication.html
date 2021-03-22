@@ -8,19 +8,19 @@
 </head>
 <body>
 
-<h1>Авторизация</h1>
-
-
+<h1>Аутентификация</h1>
 
 <div class="container">
   <form>
 
-    <p>Email: <input type="email" name="email" required></p>
+    <p>Email: <input id = "email" type="email" placeholder="E-mail"></p>
 
     <label for="psw">Пароль</label>
-    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Должно содержать не менее одной цифры и одной прописной и строчной буквы и спецсимвол, а также не менее 6 и более символов" required>
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Должно содержать не менее одной цифры и одной прописной и строчной буквы и спецсимвол, а также не менее 6 и более символов" required>
+
+    <button id="button" type=submit >отправить</button>
+
     
-   <input type="submit" value="Отправить" >
   </form>
 </div>
 
@@ -32,8 +32,18 @@
   <p id="length" class="invalid">Минимум <b>6 символов</b></p>
   <p id="char" class="invalid"><b>Спецсимвол</b></p>
 </div>
-			
+
+<div id="current_date_time_block"></div>
+
 <script src="Myscript.js"></script>
+
+<script src = IE.js></script>
+
+<script src="ClockScript.js"></script>
+
+<script src = "E-mailScrit.js"></script>
+
+<script src = "Alert.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,7 @@
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
 input {
     width: 100%;
     padding: 12px;
@@ -9,10 +13,19 @@ input {
   }
   
   /* Стиль кнопки отправки */
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
+  
+  button {
+    color: #fff;
+    background:green;
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+    transition: background 9999999s;
   }
+  
+  
   
   /* Стиль контейнера для входных данных */
   .container {

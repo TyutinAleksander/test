@@ -22,7 +22,8 @@ myInput.onkeyup = function() {
   if(myInput.value.match(lowerCaseLetters)) {  
     letter.classList.remove("invalid");
     letter.classList.add("valid");
-  } else {
+  } 
+  else {
     letter.classList.remove("valid");
     letter.classList.add("invalid");
   }
@@ -32,34 +33,38 @@ myInput.onkeyup = function() {
   if(myInput.value.match(upperCaseLetters)) {  
     capital.classList.remove("invalid");
     capital.classList.add("valid");
-  } else {
+  } 
+  else {
     capital.classList.remove("valid");
     capital.classList.add("invalid");
   }
 
-  // Проверка чисел
+  // Проверка чисел 
   var numbers = /[0-9]/g;
   if(myInput.value.match(numbers)) {  
     number.classList.remove("invalid");
     number.classList.add("valid");
-  } else {
+  } 
+  else {
     number.classList.remove("valid");
     number.classList.add("invalid");
   }
-  
   // Проверка длины
-  if(myInput.value.length >= 6) {
+  var minLength = 6;
+  if(myInput.value.length >= minLength) {
     length.classList.remove("invalid");
     length.classList.add("valid");
-  } else {
+  }
+  else {
     length.classList.remove("valid");
     length.classList.add("invalid");
   }
+  
+  
 
   // проверка на спецсимвол
-  var iChars = /[!@#$%^&*()+=-[\]\';,/{}|\":<>?]/g;
-
-  if(myInput.value.match(iChars)){
+  
+  if(myInput.value.match(/[\!\@#\$\%\^\&\*\(\)\+\=\-\[\]\\\'\;\,\/\{\}\|\"\:\<\>\?\_]/)){
       char.classList.remove("invalid");
       char.classList.add("valid");
   }
@@ -67,4 +72,19 @@ myInput.onkeyup = function() {
     char.classList.remove("valid");
     char.classList.add("invalid");
   }
+  
 }
+
+//проверка валидности пароля
+function ValidPass(){
+  var isLetter = letter.classList.contains("valid");
+  var isCapital = capital.classList.contains("valid");
+  var isNumber = number.classList.contains("valid");
+  var isLength = length.classList.contains("valid");
+  var isChar = char.classList.contains("valid");
+
+  var resylt = isLetter && isCapital && isNumber && isLength && isChar;
+
+  return resylt;
+}
+
